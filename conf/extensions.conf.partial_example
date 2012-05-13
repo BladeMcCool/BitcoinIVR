@@ -1,0 +1,11 @@
+[bitcoinivr]
+exten => IPKallBitcoinIVR,1,Goto(btcsys,s,1) ;blame http://www.voip-info.org/wiki/view/IPKall
+;EXAMPLE BELOW puts a time limit on the call so that your expensive incoming VOIP bill doesnt get DDoSd lol.
+;exten => link2voipBitcoinIVR,1,Set(TIMEOUT(absolute)=900) ; link2voip costs me money .. so lets try having a Max Call Time of 15minutes
+;exten => link2voipBitcoinIVR,n,Goto(btcsys,s,1) ;incoming from link2voip
+
+[btcsys]
+exten => s,1,Answer()
+exten => s,n,AGI(btc.pl)
+;exten => s,n,AGI(lol.pl)
+exten => s,n,Hangup()

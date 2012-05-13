@@ -1,0 +1,8 @@
+[IPKallBitcoinIVR] ;IPKall !!
+type=peer
+dtmfmode=rfc2833
+context=bitcoinivr
+;insecure=very
+;host=dynamic
+host=voiper.ipkall.com
+nat=no
